@@ -1,0 +1,35 @@
+{
+  "name": "forme-commerce-platform",
+  "version": "0.4.0",
+  "private": true,
+  "description": "FORME global commerce platform starter: API, admin UI, Prisma schema and storefront prototype",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server/src/index.js",
+    "start": "node server/src/index.js",
+    "start:prod": "prisma db push --skip-generate && node server/src/index.js",
+    "prisma:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "seed": "node server/prisma/seed.js",
+    "seed:demo": "node server/prisma/seed-demo.js",
+    "test": "node --test server/test/*.test.js"
+  },
+  "prisma": {
+    "schema": "server/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "zod": "^3.25.49"
+  },
+  "devDependencies": {
+    "prisma": "^6.10.1"
+  }
+}

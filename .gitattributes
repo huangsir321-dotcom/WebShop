@@ -1,0 +1,6 @@
+# Keep line endings stable across Windows and Linux checkouts, and treat the
+# product photos as binary so git never tries to touch them.
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.webp binary

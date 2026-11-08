@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FORME — considered clothing, shoes, bags and accessories for everyday life.">
+<title>FORME — Modern essentials, worldwide</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="announcement">WORLDWIDE SHIPPING · COMPLIMENTARY SHIPPING OVER $120</div>
+<header class="header">
+  <button class="icon-btn mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+  <a class="logo" href="#" aria-label="FORME home">FORME<span>.</span></a>
+  <nav class="main-nav" id="mainNav"><a href="#shop" data-category="All">Shop all</a><a href="#shop" data-category="Clothing">Clothing</a><a href="#shop" data-category="Shoes">Shoes</a><a href="#shop" data-category="Bags">Bags</a><a href="#shop" data-category="Accessories">Accessories</a><a href="#story">Our story</a></nav>
+  <div class="header-actions"><button class="icon-btn" id="searchToggle">Search</button><select id="currency" aria-label="Display currency"><option value="USD">USD $</option><option value="EUR">EUR €</option><option value="GBP">GBP £</option><option value="CAD">CAD $</option><option value="AUD">AUD $</option></select><button class="icon-btn" id="accountBtn">Account</button><button class="icon-btn" id="cartBtn">Bag (<span id="cartCount">0</span>)</button></div>
+</header>
+<nav class="mobile-nav" id="mobileNav"><a href="#shop" data-category="All">Shop all</a><a href="#shop" data-category="Clothing">Clothing</a><a href="#shop" data-category="Shoes">Shoes</a><a href="#shop" data-category="Bags">Bags</a><a href="#shop" data-category="Accessories">Accessories</a></nav>
+<main>
+<section class="hero"><div class="hero-copy"><p class="eyebrow" id="heroEyebrow">THE EVERYDAY EDIT · WORLDWIDE</p><h1 id="heroTitle">Find your<br><em>everyday form.</em></h1><p id="heroBody">Considered clothing, shoes and accessories. Designed for real life, wherever it takes you.</p><a class="button dark" href="#shop">Explore the collection <span>↗</span></a><div class="hero-proof"><span>✳ Thoughtful essentials</span><span>↗ Ships worldwide</span></div></div><div class="hero-image"><img id="heroImage" src="/images/hero.jpg" alt="FORME new season collection"><div class="hero-label" id="heroLabel">NEW SEASON<br><b>COLLECTION 01 / 26</b></div></div></section>  <!--这是放首页大图的-->
+<section class="ticker"><span>LESS, BUT BETTER</span><span>DESIGNED TO LIVE IN</span><span>YOUR EVERYDAY UNIFORM</span><span>SHIPS WORLDWIDE</span></section>
+<section class="shop-section" id="shop"><div class="section-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>The collection</h2><p class="subhead">A considered edit of pieces to wear, carry and keep.</p></div><div class="filters" id="filters"><button class="filter active" data-filter="All">All pieces</button><button class="filter" data-filter="Clothing">Clothing</button><button class="filter" data-filter="Shoes">Shoes</button><button class="filter" data-filter="Bags">Bags</button><button class="filter" data-filter="Accessories">Accessories</button></div></div>
+<div class="tools-row"><label class="searchbox"><span>⌕</span><input id="searchInput" placeholder="Search products…" aria-label="Search products"></label><div class="sort-wrap"><span id="resultCount">0 pieces</span><select id="sortSelect" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name A–Z</option></select></div></div>
+<div class="products" id="products"></div><div class="load-note">Live catalogue · products, prices and imagery are managed in the admin console</div></section>
+<section class="benefits"><div><span>01</span><b>Thoughtful design</b><p>Versatile pieces, considered in every detail.</p></div><div><span>02</span><b>Worldwide delivery</b><p>Shipping options shown at checkout after configuration.</p></div><div><span>03</span><b>Easy returns</b><p>Clear policies and support, built around you.</p></div></section>
+<section class="story" id="story"><div class="story-photo"><img id="storyImage" src="/images/story.jpg" alt="FORME studio"></div><div class="story-copy"><p class="eyebrow" id="storyEyebrow">OUR PHILOSOPHY</p><h2 id="storyTitle">Fewer things.<br><em>Better chosen.</em></h2><p id="storyBody">FORME is a modern everyday wardrobe built around thoughtful design, tactile materials and timeless forms. Wear it your way, season after season.</p><a href="#shop" class="text-link">Discover our approach ↗</a></div></section>  <!--这是放品牌故事图的-->
+<section class="newsletter"><p class="eyebrow">A NOTE FROM FORME</p><h2>Good things, occasionally.</h2><p>Join our list for first access to new collections and considered offers.</p><form id="newsletterForm"><input type="email" required placeholder="Your email address" aria-label="Your email address"><button class="button dark">Sign me up ↗</button></form><small id="newsletterMessage">Demo signup only. No email will be sent.</small></section>
+</main>
+<footer><a class="logo" href="#">FORME<span>.</span></a><div class="footer-links"><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="/admin/">Store admin</a></div><small>© 2026 FORME Studio · Prototype storefront</small></footer>
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Shopping bag"><div class="panel-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="bagSub"></span></h2></div><button class="icon-btn" id="closeCart" aria-label="Close cart">✕</button></div><div id="cartItems" class="cart-content"></div><div class="cart-bottom"><div class="subtotal"><span>Subtotal</span><b id="subtotal">$0.00</b></div><p>Shipping and taxes calculated at checkout.</p><button class="button dark full" id="checkoutBtn">Continue to checkout ↗</button><small>Demo checkout — no payment is collected.</small></div></aside>
+<div class="modal-backdrop" id="modalBackdrop"><section class="modal" id="modal" role="dialog" aria-modal="true"><button class="icon-btn modal-close" id="closeModal">✕</button><div id="modalContent"></div></section></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+<script src="locales.js"></script>
+</body></html>

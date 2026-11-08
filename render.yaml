@@ -1,0 +1,41 @@
+# One-click deploy blueprint for Render.
+#
+#   1. push this repository to GitHub
+#   2. open the "Deploy to Render" button in README.md
+#   3. Render asks for the two values marked `sync: false` - that is the
+#      whole setup
+#
+# The blueprint creates a PostgreSQL instance and one web service that runs
+# the API, which also serves the storefront. The schema is applied to the
+# database on every start (see the `start:prod` script).
+
+services:
+  - type: web
+    name: forme-storefront
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: forme-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+
+  - type: postgres
+    name: forme-db
+    plan: free
+    databaseName: forme
+    user: forme
